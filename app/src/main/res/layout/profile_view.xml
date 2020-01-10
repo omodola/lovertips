@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent" >-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff">
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="fill_parent"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:layout_marginRight="10dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:background="@drawable/bg_parent_rounded_corner"-->
+<!--        android:orientation="vertical"-->
+<!--        android:paddingBottom="20dp"-->
+<!--        android:paddingTop="20dp" >-->
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorMildRed"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/profilePic"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/profile_pix" />
+
+            <!--            <com.android.volley.toolbox.NetworkImageView-->
+            <!--                android:id="@+id/profilePic"-->
+            <!--                android:layout_width="@dimen/feed_item_profile_pic"-->
+            <!--                android:layout_height="@dimen/feed_item_profile_pic"-->
+            <!--                android:scaleType="fitCenter" >-->
+            <!--            </com.android.volley.toolbox.NetworkImageView>-->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text=""
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/timestamp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="12.Nov.2019"
+                    android:textColor="#a0a3a7"
+                    android:textSize="13dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtStatusMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="50dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="5dp"
+            android:text="lorem ipsum dgfvhbjcf fuhgjkk fyhgjkl tfhjbnk fhgj
+                     lorem ipsum dgfvhbjcf fuhgjkk fyhgjkl tfhjbnk fhgj" />
+
+        <TextView
+            android:id="@+id/txtUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:linksClickable="true"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="10dp"
+            android:textColorLink="#0a80d1" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <!--        <info.androidhive.listviewfeed.FeedImageView-->
+<!--            android:id="@+id/feedImage1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/white"-->
+<!--            android:scaleType="fitXY"-->
+<!--            android:visibility="visible" />-->
+<!--    </LinearLayout>-->
+
+</RelativeLayout>
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
