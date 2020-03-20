@@ -37,8 +37,8 @@ class LoginActivity : AppCompatActivity() {
         val username = findViewById<EditText>(R.id.email)
         val password = findViewById<EditText>(R.id.password)
         //val checkBox = findViewById<CheckBox>(R.id.checkbox)
-        val signin =findViewById<ImageButton>(R.id.signin)
-        val signup = findViewById<Button>(R.id.signup)
+        val signin =findViewById<Button>(R.id.signin)
+        val signup = findViewById<TextView>(R.id.signup)
 
         val loading = findViewById<ProgressBar>(R.id.loading)
 

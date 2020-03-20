@@ -10,7 +10,7 @@ class BroadcastViewModel : ViewModel() {
 //    val text: LiveData<String> = _text
 
 
-    var gettitle: String = ""
+    var get_title: String = ""
 
         get() = field
 
@@ -18,7 +18,7 @@ class BroadcastViewModel : ViewModel() {
             field = value
         }
 
-    var image_drawable: Int = 0
+    var get_image: Int = 0
 
         get() = field
 
@@ -26,7 +26,7 @@ class BroadcastViewModel : ViewModel() {
             field = value
         }
 
-    var gettag: String = ""
+    var get_time: String = ""
 
         get() = field
 
@@ -35,7 +35,7 @@ class BroadcastViewModel : ViewModel() {
         }
 
 
-    var getcontent: String = ""
+    var get_content: String = ""
 
         get() = field
 

@@ -1,15 +1,16 @@
-package com.example.lovertips.messages.providers
+package com.example.lovertips.notifications.providers
+
 
 import com.example.lovertips.R
-import com.example.lovertips.messages.model.MessagesViewModel
+import com.example.lovertips.notifications.model.NotificationsViewModel
 
 
-class MessagesData {
+class NotificationsData {
     private val title = arrayOf("Dola Olowe", "John Doe", "Maria Meray","Dola Olowe", "John Doe",
         "Maria Meray", "ffd", "gdf","ertfyg","etry","4rtyui","ertyuhjk","yetufyguhkj")
     private val content  = arrayOf("So you wont come to my apartment right" +
             "you wont come to my apartment rightyou wont come to my apartment right", "mfdjnfj", "kellssdsgjdsghjkds",
-                                    "mfdjnfj", "kellssdsgjdsghjkds", "mfdjnfj", "khgj","bjbj","dgfhjkjbhvgcdfsgadfg",
+        "mfdjnfj", "kellssdsgjdsghjkds", "mfdjnfj", "khgj","bjbj","dgfhjkjbhvgcdfsgadfg",
         "tiyouiupoipo'åpkojihugyftufyiguhijkäl", "glhkjljhgftdrsdtfghjkj")
     private val image = intArrayOf(
         R.drawable.profile_pix,
@@ -33,19 +34,19 @@ class MessagesData {
     private val date  = arrayOf("10 Nov 2019", "11 Oct 2018", "14 April 2019",
         "11 Jan 2018", "05 Mar 2020", "06 Jun 2010", "16 Jul 2019","23 Dec 2020","24 Dec 2020","25 Dec 2020","26 Dec 2020")
 
-    fun quick_links(): ArrayList<MessagesViewModel> {
+    fun quick_links(): ArrayList<NotificationsViewModel> {
 
 //         val topR = ItemsModel(myTagList[j])
-        val list = ArrayList<MessagesViewModel>()
+        val list = ArrayList<NotificationsViewModel>()
 
         for (j in 0..10) {
             val topR =
-                MessagesViewModel()
+                NotificationsViewModel()
 
             topR.get_title = title[j]
             topR.get_content = content[j]
             topR.get_image = image[j]
-            topR.get_date = date[j]
+            topR.get_time = date[j]
 
             //println(myTagList[j])
             list.add(topR)

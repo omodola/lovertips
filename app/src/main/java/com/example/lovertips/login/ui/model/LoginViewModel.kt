@@ -9,12 +9,14 @@ import com.example.lovertips.login.data.LoginRepository
 import com.github.kittinunf.result.Result
 
 import com.example.lovertips.R
+import com.example.lovertips.login.data.Res
 import com.example.lovertips.login.ui.LoggedInUserView
 import com.example.lovertips.login.ui.LoginFormState
 import com.example.lovertips.login.ui.LoginResult
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.json.responseJson
 import org.json.JSONObject
+import kotlin.system.exitProcess
 
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 
@@ -24,13 +26,26 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
     private val _loginResult = MutableLiveData<LoginResult>()
     val loginResult: LiveData<LoginResult> = _loginResult
 
+
+    enum class AuthenticationState {
+        UNAUTHENTICATED,
+        AUTHENTICATED,
+        INVALID_AUTHENTICATION
+    }
+
+    val authenticationState = MutableLiveData<AuthenticationState>()
+
+    init{
+        authenticationState.value = AuthenticationState.UNAUTHENTICATED
+    }
+
+
     fun login(userJson:String) {
         // can be launched in a separate asynchronous job
         //val result = loginRepository.login(username)
         try {
-            //Fuel.post("http://192.168.56.1/lovertips/api/login/")
 
-           Fuel.post("http://192.168.10.40/lovertips/api/login/")
+            Fuel.post("http://192.168.10.40/lovertips/api/login/")
             .body(userJson)
             .responseJson()
             {
@@ -57,14 +72,18 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
                                 success = LoggedInUserView(
                                     userObject = data,
                                     firstName = data.getString("first_name"), _token = token
+
+
                                 )
                             )
+                        authenticationState.value = AuthenticationState.AUTHENTICATED
+
                         //return _loginResult
                     }
                 }
 
                 //preferenceHelper!!.putToken(response["token"].toString())
-              //  loginViewModel.login(result)
+                //  loginViewModel.login(result)
 
             }
         } catch (e: Exception) {

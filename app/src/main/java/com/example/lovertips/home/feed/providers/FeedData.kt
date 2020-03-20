@@ -35,10 +35,10 @@ class FeedData {
             val topR = ItemModel()
 
             topR.gettitle = gridViewString[j]
-            topR.image_drawable = gridViewImageId[j]
+            topR.profile_image = gridViewImageId[j]
             topR.gettag =  gridViewTag[j]
             topR.getcontent =  gridViewContent[j]
-            topR.image_drawable =  gridViewContentImage[j]
+            topR.post_image =  gridViewContentImage[j]
 
             //println(myTagList[j])
             list.add(topR)

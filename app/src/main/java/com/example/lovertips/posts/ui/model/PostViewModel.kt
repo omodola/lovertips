@@ -25,16 +25,15 @@ class PostViewModel ():ViewModel(){
     fun createPost(userJson:String, userToken:String) {
         //val result = postRepository.post(input)
         try {
+            //Fuel.post("http://192.168.10.40/lovertips/api/posts/")
             Fuel.post("http://192.168.10.40/lovertips/api/posts/")
-            //Fuel.post("http://192.168.56.1/lovertips/api/posts/")
+            //Fuel.post("http://192.168.43.84/lovertips/api/posts/")
+
                 .header("token", userToken)
                 .body(userJson)
                 .responseJson()
                 {
                         request,response, result ->
-                    println(request)
-                    println(response)
-
                     when(result){
 
                         is Result.Failure->{
@@ -47,10 +46,12 @@ class PostViewModel ():ViewModel(){
                             // return LoginResult(error= R.string.login_failed)
                         }
                         is Result.Success ->{
-                            println(result)
 
                             val jsono = result.get().obj()
-                            val data = JSONObject(jsono.toString())
+                            val array = jsono.getJSONObject("post")
+                            val data = JSONObject(array.toString())
+                            println(data)
+
                             val token = response["token"].toString().drop(1).dropLast(1)
                             _postResult.value =
                                 PostResult(
@@ -73,25 +74,28 @@ class PostViewModel ():ViewModel(){
 
         try {
 
-            //Fuel.get("http://192.168.56.1/lovertips/api/posts/")
             Fuel.get("http://192.168.10.40/lovertips/api/posts/")
 
                 .header("Content-Type", "application/json")
                 .header("token", token)
                 .responseJson()
                 {
-                        request,response, result ->
+                    request,response, result ->
+
                     when(result){
 
                         is Result.Failure->{
                             Log.i("ErrorMsg", result.getException().toString())
                         }
                         is Result.Success ->{
-                            val jsono = result.get().array()
+                            val jsono = result.get().obj()
+
+                            val array = jsono.getJSONArray("posts")
+
                             _allPostsResult.value =
                                 GetAllPostsResult(
                                     success = GetPostUserView(
-                                        _array = jsono
+                                        _array = array
                                     )
                                 )
                         }

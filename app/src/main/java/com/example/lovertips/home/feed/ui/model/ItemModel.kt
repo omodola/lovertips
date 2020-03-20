@@ -18,7 +18,15 @@ class ItemModel : ViewModel() {
             field = value
         }
 
-    var image_drawable: Int = 0
+    var profile_image: Int = 0
+
+        get() = field
+
+        set(value) {
+            field = value
+        }
+
+    var post_image: Int = 0
 
         get() = field
 

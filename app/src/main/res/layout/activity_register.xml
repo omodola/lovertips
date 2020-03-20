@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorGreyMild"
+    android:layout_marginTop="10dp"
+    android:background="@color/colorWhite"
     tools:context=".register.ui.RegisterActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -13,22 +14,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="@color/colorGreyMild"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        >
+        android:theme="?attr/actionBarTheme">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tell us about you."
+            android:text="@string/about"
             android:textStyle="bold"
             android:textColor="@color/colorBlack"
             android:textSize="30sp"
             android:textAlignment="center"
-            app:fontFamily="@font/montserrat_alternates"
-
-            />
+            app:fontFamily="@font/montserrat_alternates" />
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
@@ -37,6 +34,7 @@
         android:layout_below="@+id/toolbar"
         android:orientation="vertical"
         android:layout_centerHorizontal="true">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_marginStart="20dp"
@@ -45,47 +43,34 @@
             android:orientation="vertical"
             android:layout_height="match_parent"
             android:layout_marginBottom="20dp"
-            android:gravity="center"
-            android:background="@drawable/layout_background">
+            android:gravity="center">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="440dp"
-                android:orientation="vertical"
-                >
-                <!--<EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/user_icon"
-                    android:layout_marginEnd="20dp"
-                    android:id="@+id/name"
-                    android:layout_marginStart="20dp"
-                    android:textSize="14sp"
-                    android:drawablePadding="10dp"
-                    android:hint="NAME"
-                    android:padding="20dp"
-                    android:textColorHint="#606060"
-                    android:inputType="textPersonName"/>-->
+                android:orientation="vertical">
+
 
                 <EditText
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="10dp"
-                    android:id="@+id/email"
                     android:drawableStart="@drawable/phone_icon"
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
-                    android:hint="EMAIL/MOBILE"
                     android:padding="20dp"
                     android:textSize="14sp"
                     android:textColorHint="#606060"
-                    android:inputType="text"/>
+                    android:hint="@string/user_id_hint"
+                    android:inputType="textEmailAddress"/>
+
 
                 <EditText
+                    android:id="@+id/phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="10dp"
-                    android:id="@+id/phone_number"
                     android:drawableStart="@drawable/mail_icon"
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
@@ -93,36 +78,36 @@
                     android:padding="20dp"
                     android:textSize="14sp"
                     android:textColorHint="#606060"
-                    android:inputType="text"/>
+                    android:inputType="phone"/>
 
                 <EditText
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:drawableLeft="@drawable/password_icon"
+                    android:drawableStart="@drawable/password_icon"
                     android:layout_marginEnd="20dp"
-                    android:id="@+id/password"
                     android:layout_marginStart="20dp"
                     android:textSize="14sp"
                     android:drawablePadding="10dp"
-                    android:hint="PASSWORD"
                     android:padding="20dp"
                     android:textColorHint="#606060"
+                    android:hint="@string/password"
                     android:inputType="textPassword"/>
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:drawableLeft="@drawable/password_icon"
+                    android:drawableStart="@drawable/password_icon"
                     android:layout_marginEnd="20dp"
                     android:id="@+id/confirm_password"
                     android:layout_marginStart="20dp"
                     android:textSize="14sp"
                     android:drawablePadding="10dp"
-                    android:hint="CONFIRM PASSWORD"
                     android:padding="20dp"
                     android:textColorHint="#606060"
+                    android:hint="@string/confirm_pwd"
                     android:inputType="textPassword"/>
 
 
@@ -145,21 +130,22 @@
                 <CheckBox
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Agree to Out Terms &amp; Conditions"
+                    android:text="@string/terms"
                     android:id="@+id/checkbox"
                     android:layout_marginTop="20dp"
-                    android:layout_marginLeft="30dp" />
+                    android:layout_marginStart="30dp" />
 
-                <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="45dp"
-                    android:layout_marginEnd="25dp"
+                <Button
                     android:id="@+id/signup"
-                    android:src="@drawable/arrow_right"
-                    android:background="@drawable/button_background"/>
-
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_background"
+                    android:text="@string/sign_up"
+                    android:textColor="@android:color/white" />
 
             </LinearLayout>
 
@@ -168,26 +154,19 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
+
                 <TextView
+                    android:id="@+id/signin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Already have an Account"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/haveanaccount"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:fontFamily="@font/montserrat_alternates" />
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/signin"
-                    android:background="@drawable/button_background"
-                    android:text="SIGN IN"
-                    android:textColor="@android:color/white" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

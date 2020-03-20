@@ -27,9 +27,9 @@ class FeedAdapter(val context: Context, private val imageModelArrayList : ArrayL
 
         holder.tag.setText(imageModelArrayList[position].gettag)
         holder.time.setText(imageModelArrayList[position].gettitle)
-        holder.iv.setImageResource(imageModelArrayList[position].image_drawable)
+        holder.iv.setImageResource(imageModelArrayList[position].profile_image)
         holder.content.setText(imageModelArrayList[position].getcontent)
-        holder.content_image.setImageResource(imageModelArrayList[position].image_drawable)
+        holder.content_image.setImageResource(imageModelArrayList[position].post_image)
 
     }
 

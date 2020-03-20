@@ -32,4 +32,10 @@
         android:name="com.example.lovertips.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_broadcast"
+        android:name="com.example.lovertips.home.broadcast.BroadcastFragment"
+        android:label=""
+        tools:layout="@layout/fragment_broadcast" />
 </navigation>

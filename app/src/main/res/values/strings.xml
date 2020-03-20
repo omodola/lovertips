@@ -7,6 +7,7 @@
     <string name="title_feed">Feeds</string>
     <string name="title_profile">Profile</string>
     <string name="title_posts">Post</string>
+    <string name="title_personal_info">Edit Personal Information</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -19,22 +20,32 @@
     <string name="confirm_password">Passwords must match</string>
     <string name="log_in">"Log In."</string>
     <string name="forgot_password">"Forgot Password?"</string>
-    <string name="new_user_create_account">"New User? Create Account"</string>
+    <string name="new_user_create_account">"New User?"<u>"Create Account"</u></string>
     <string name="we_missed_you">"We missed you!"</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="username_hint">"Email/Phone/Username"</string>
 
 
     <!-- Strings related to register -->
+    <string name="about">Tell us about you.</string>
     <string name="name">Name</string>
     <string name="email_address">Email Address</string>
     <string name="phone_number">Phone Number</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="other">Other</string>
+    <string name="terms"><u>"Agree to Out Terms &amp; Conditions"</u></string>
+    <string name="haveanaccount">"Already have an account?<u>Sign in"</u></string>
+    <string name="user_id_hint">"EMAIL/MOBILE"</string>
+    <string name="confirm_pwd">"CONFIRM PASSWORD"</string>
+    <string name="sign_up">"SIGN UP"</string>
 
 
     <!-- Strings related to post -->
     <string name="create_post">Create Post</string>
+
+    <!-- Strings related to messages -->
+    <string name="messages">Messages</string>
 
 
 </resources>

@@ -19,17 +19,16 @@ class BroadcastAdapter(val context: Context, private val imageModelArrayList : A
         return ItemViewHolder(
             LayoutInflater.from(
                 context
-            ).inflate(R.layout.sectioned_linear_items, parent, false)
+            ).inflate(R.layout.broadcast_view, parent, false)
         )
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
 
-        holder.tag.setText(imageModelArrayList[position].gettag)
-        holder.time.setText(imageModelArrayList[position].gettitle)
-        holder.iv.setImageResource(imageModelArrayList[position].image_drawable)
-        holder.content.setText(imageModelArrayList[position].getcontent)
-        holder.content_image.setImageResource(imageModelArrayList[position].image_drawable)
+        holder.broadcast_content.setText(imageModelArrayList[position].get_content)
+        holder.broadcast_time.setText(imageModelArrayList[position].get_time)
+        holder.broadcast_image.setImageResource(imageModelArrayList[position].get_image)
+        holder.broadcast_title.setText(imageModelArrayList[position].get_title)
 
     }
 
@@ -39,19 +38,19 @@ class BroadcastAdapter(val context: Context, private val imageModelArrayList : A
     }
 
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        var time: TextView
-        var iv: ImageView
-        var tag: TextView
-        var content : TextView
-        var content_image: ImageView
+        var broadcast_title: TextView
+        var broadcast_content: TextView
+        var broadcast_time: TextView
+        var broadcast_image: ImageView
 
         init {
 
-            time = itemView.findViewById(R.id.recycler_card_title) as TextView
-            tag = itemView.findViewById(R.id.recycler_card_tag) as TextView
-            iv = itemView.findViewById(R.id.user_image) as ImageView
-            content = itemView.findViewById(R.id.recycler_card_content) as TextView
-            content_image = itemView.findViewById(R.id.content_image) as ImageView
+            broadcast_title = itemView.findViewById(R.id.broadcast_view_title) as TextView
+            broadcast_content = itemView.findViewById(R.id.brodcast_view_content) as TextView
+            broadcast_image = itemView.findViewById(R.id.broadcast_view_image) as ImageView
+            broadcast_time = itemView.findViewById(R.id.broadcast_view_time) as TextView
+
+
 
         }
     }

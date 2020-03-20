@@ -25,6 +25,8 @@ class MessagesAdapter(val context: Context, private val messagesList : ArrayList
         holder.messages_title.setText(messagesList[position].get_title)
         holder.messages_content.setText(messagesList[position].get_content)
         holder.messages_image.setImageResource(messagesList[position].get_image)
+        holder.messages_time.setText(messagesList[position].get_date)
+
     }
 
 
@@ -36,12 +38,15 @@ class MessagesAdapter(val context: Context, private val messagesList : ArrayList
         var messages_title: TextView
         var messages_image: ImageView
         var messages_content: TextView
+        var messages_time:TextView
 
         init {
 
             messages_title = itemView.findViewById(R.id.messages_title) as TextView
             messages_content = itemView.findViewById(R.id.messages_content) as TextView
             messages_image = itemView.findViewById(R.id.messages_image) as ImageView
+            messages_time = itemView.findViewById(R.id.message_time) as TextView
+
         }
     }
 

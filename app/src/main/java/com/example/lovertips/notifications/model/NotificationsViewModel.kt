@@ -1,14 +1,15 @@
-package com.example.lovertips.messages.model
+package com.example.lovertips.notifications.model
+
+
 
 import androidx.lifecycle.ViewModel
 
-class MessagesViewModel : ViewModel() {
+class NotificationsViewModel : ViewModel() {
 
 //    private val _text = MutableLiveData<String>().apply {
-//        value = "This is dashboard Fragment"
+//        value = "This is Profile Fragment"
 //    }
 //    val text: LiveData<String> = _text
-
 
     var get_title: String = ""
 
@@ -17,8 +18,7 @@ class MessagesViewModel : ViewModel() {
         set(value) {
             field = value
         }
-
-    var get_image: Int = 0
+    var get_time: String = ""
 
         get() = field
 
@@ -34,11 +34,13 @@ class MessagesViewModel : ViewModel() {
             field = value
         }
 
-    var get_date: String = ""
+    var get_image: Int = 0
 
         get() = field
 
         set(value) {
             field = value
         }
+
+
 }

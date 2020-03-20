@@ -17,6 +17,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val textView = getString(R.string.app_name)
         (activity as AppCompatActivity).supportActionBar?.title = textView
 

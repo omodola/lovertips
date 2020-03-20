@@ -1,49 +1,77 @@
 package com.example.lovertips.profile
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.lovertips.R
-import com.example.lovertips.home.feed.ui.model.BroadcastViewModel
+import com.example.lovertips.profile.adapters.ProfileAdapter
+import com.example.lovertips.profile.model.ProfileViewModel
+import com.example.lovertips.profile.providers.ProfileData
+import java.nio.channels.Selector
 
-class ProfileFragment : Fragment() {
+
+class ProfileFragment : Fragment(), ProfileAdapter.OnClickProfile {
 
 
-    private lateinit var homeViewModel: BroadcastViewModel
+    private lateinit var profileViewModel: ProfileViewModel
+    private var model: ProfileViewCommunicator?=null
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(BroadcastViewModel::class.java)
+        profileViewModel =
+            ViewModelProviders.of(this).get(ProfileViewModel::class.java)
+       // val root = inflater.inflate(R.layout.fragment_profile, container, false)
         val root = inflater.inflate(R.layout.fragment_profile, container, false)
 
-        /*val hometoolbar: Toolbar = root.findViewById(R.id.toolbar_test)
-        (activity as AppCompatActivity).setSupportActionBar(hometoolbar)*/
-
-        val ctn = (activity as AppCompatActivity).supportActionBar
-        ctn?.setDisplayShowTitleEnabled(false)
 
 
-        /*val textView = getString(R.string.app_name)
-        val mspan = SpannableString(textView);
 
-        val mBlack = ForegroundColorSpan(Color.BLACK)
-        val mRed = ForegroundColorSpan(Color.GREEN)
+        val recyclerView: RecyclerView = root.findViewById(R.id.profile_recycler_view)
+        recyclerView.setHasFixedSize(true)
 
-        mspan.setSpan(mRed, 5,9, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        (activity as AppCompatActivity).supportActionBar?.title = mspan*/
+        val linearLayoutManager = LinearLayoutManager(requireActivity())
+        recyclerView.setLayoutManager(linearLayoutManager)
+
+        val data2 = ProfileData()
+        val listViewAdapter =
+            ProfileAdapter(
+                requireActivity(),
+                data2.quick_links(),
+                this
+            )
+        recyclerView.adapter = listViewAdapter
+
 
 
         return root
     }
 
+
+    override fun onItemClicked(item: ProfileViewModel, position: Int) {
+        if(position == 0){
+            val intent = Intent(activity, ProfileInformationActivity::class.java)
+            activity?.startActivity(intent)
+        }
+        //model= ViewModelProviders.of(activity!!).get(ProfileViewCommunicator::class.java)
+
+        //set the message to share to another fragment
+       // model!!.setMsgCommunicator(edt.text.toString())
+        //Launch the data receiver fragment
+
+    }
 
 }

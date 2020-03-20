@@ -11,7 +11,7 @@ class ProfileViewModel : ViewModel() {
 //    val text: LiveData<String> = _text
 
 
-    var get_title: String = ""
+    var get_content: String = ""
 
         get() = field
 
@@ -27,19 +27,5 @@ class ProfileViewModel : ViewModel() {
             field = value
         }
 
-    var get_content: String = ""
 
-        get() = field
-
-        set(value) {
-            field = value
-        }
-
-    var get_date: String = ""
-
-        get() = field
-
-        set(value) {
-            field = value
-        }
 }

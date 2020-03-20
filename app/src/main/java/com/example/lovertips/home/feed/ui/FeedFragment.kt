@@ -62,7 +62,7 @@ class FeedFragment : Fragment() {
     private fun setUpRecvcler(rooti:View, datum:ArrayList<ItemModel>) {
 
 
-        val recyclerView: RecyclerView = rooti.findViewById(R.id.feed_sectioned_recycler_view)
+        val recyclerView: RecyclerView = rooti.findViewById(R.id.feed_recycler_view)
         recyclerView.setHasFixedSize(true)
 
         val linearLayoutManager = LinearLayoutManager(requireActivity())
@@ -70,7 +70,13 @@ class FeedFragment : Fragment() {
 
         val sectionModelArrayList = ArrayList<SectionModel>()
         //add the section and items to array list
-        val data = FeedData()
+        /*val data = FeedData()
+
+        val listViewAdapter = FeedAdapter(
+            requireActivity(),
+            data.card_data()
+        )
+        recyclerView.adapter = listViewAdapter*/
 
         val listViewAdapter = FeedAdapter(
             requireActivity(),
@@ -100,10 +106,11 @@ class FeedFragment : Fragment() {
     private fun updateUiWithUser(model: GetPostUserView): ArrayList<ItemModel> {
         val list = ArrayList<ItemModel>()
         val array = model._array
+
         for (i in 0 until array.length()){
             val data = array.getJSONObject(i)
             val topR = ItemModel()
-
+println(data)
             val user = data.getJSONObject("user")
             val firstName = user.getString("first_name")
 
@@ -111,15 +118,13 @@ class FeedFragment : Fragment() {
             val url = profilePhoto.getString("url")
             val title = data.getString("title")
             topR.gettitle = title
-            topR.image_drawable =  R.drawable.profile_pix
-
+            topR.profile_image = R.drawable.profile_pix
             topR.gettag = data.getString("created_on")
             topR.getcontent = data.getString("body")
 
-            if (url.isNotEmpty()){
+            /*if (url.isNotEmpty()){
                 topR.image_drawable =  R.drawable.profile_pix
-
-            }
+            }*/
             list.add(topR)
 
 

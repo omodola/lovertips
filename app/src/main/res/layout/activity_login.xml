@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorGreyMild"
-    >
+    android:background="@color/colorWhite">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -13,23 +12,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="@color/colorGreyMild"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:fontFamily="@font/montserrat_alternates"
-
-        >
+        app:fontFamily="@font/montserrat_alternates">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@mipmap/lovertips_logo_foreground"
             android:textStyle="bold"
             android:textColor="@color/colorBlack"
-            android:textSize="30sp"
-            android:textAlignment="center"
+            android:textAlignment="center" />
 
-            />
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
@@ -42,45 +36,46 @@
             android:layout_width="match_parent"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:gravity="center"
-            android:background="@drawable/layout_background">
+            android:gravity="center">
+            <!--android:background="@drawable/layout_background">-->
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="430dp"
-                android:orientation="vertical"
-                >
+                android:layout_height="400dp"
+                android:orientation="vertical">
+
                 <EditText
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="10dp"
-                    android:id="@+id/email"
-                    android:drawableLeft="@drawable/mail_icon"
+                    android:drawableStart="@drawable/mail_icon"
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
-                    android:hint="EMAIL/MOBILE"
                     android:padding="20dp"
                     android:textSize="14sp"
                     android:textColorHint="#606060"
-                    android:inputType="text"/>
+                    android:hint="@string/username_hint"
+                    android:inputType="textEmailAddress"/>
+
                 <EditText
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:drawableLeft="@drawable/password_icon"
+                    android:drawableStart="@drawable/password_icon"
                     android:layout_marginEnd="20dp"
-                    android:id="@+id/password"
                     android:layout_marginStart="20dp"
                     android:textSize="14sp"
                     android:drawablePadding="10dp"
-                    android:hint="PASSWORD"
                     android:padding="20dp"
                     android:textColorHint="#606060"
+                    android:hint="@string/password"
                     android:inputType="textPassword"/>
+
                 <ProgressBar
                     android:id="@+id/loading"
                     android:layout_width="wrap_content"
@@ -97,25 +92,26 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.3" />
 
-                <CheckBox
+
+                <Button
+                    android:id="@+id/signin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="REMEMBER ME"
-                    android:id="@+id/checkbox"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_background"
+                    android:text="@string/action_sign_in"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/forgotpassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forgot_password"
                     android:layout_marginTop="20dp"
-                    android:layout_marginLeft="30dp" />
-
-                <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="70dp"
-                    android:layout_marginEnd="25dp"
-                    android:id="@+id/signin"
-                    android:src="@drawable/arrow_right"
-                    android:background="@drawable/button_background"/>
-
-
+                    android:layout_marginStart="30dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -124,6 +120,7 @@
                 android:orientation="vertical"
                 android:gravity="center">
                 <TextView
+                    android:id="@+id/signup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -132,10 +129,9 @@
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textStyle="bold"
-                    app:fontFamily="@font/montserrat_alternates"
-                    />
+                    app:fontFamily="@font/montserrat_alternates" />
 
-                <Button
+                <!--<Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -145,7 +141,7 @@
                     android:id="@+id/signup"
                     android:background="@drawable/button_background"
                     android:text="SIGN UP"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white" />-->
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

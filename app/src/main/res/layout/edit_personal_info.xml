@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".profile.ProfileInformationActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_personal_info"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ToolbarColored"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:elevation="0dp"
+        android:background="@drawable/custom_border"
+        app:title="@string/title_personal_info" >
+
+        <Button
+            android:id="@+id/create_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:textSize="12sp"
+            android:background="@null"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/colorMildRed"
+            android:text="Save"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <TextView
+        android:id="@+id/textView_enter_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/colorBlack"
+        android:text="First name" />
+
+    <EditText
+        android:id="@+id/first_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp"
+        android:textSize="18sp"
+        android:textColorHint="#606060"
+        android:text="Dolly"
+        android:inputType="text"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/colorBlack"
+        android:text="Last name" />
+
+    <EditText
+        android:id="@+id/last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp"
+        android:textSize="18sp"
+        android:textColorHint="#606060"
+        android:text="Molly"
+        android:inputType="text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/colorBlack"
+        android:text="Gender" />
+
+    <EditText
+        android:id="@+id/gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp"
+        android:textSize="18sp"
+        android:textColorHint="#606060"
+        android:text="Female"
+        android:inputType="none" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/colorBlack"
+        android:text="Date of Birth" />
+
+    <EditText
+        android:id="@+id/dob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp"
+        android:textSize="18sp"
+        android:textColorHint="#606060"
+        android:text="22/05/1991"
+        android:inputType="text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/colorBlack"
+        android:text="Phone number" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp"
+        android:textSize="18sp"
+        android:textColorHint="#606060"
+        android:hint="@string/phone_number"
+        android:text="+358417493289"
+        android:inputType="phone"/>
+</LinearLayout>

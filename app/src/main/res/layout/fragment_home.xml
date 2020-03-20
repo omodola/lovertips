@@ -22,7 +22,8 @@
             android:theme="@style/ToolbarColored"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:elevation="0dp"
-            app:title="@string/app_name" />
+            app:logo="@mipmap/lovertips_logo_foreground"/>
+<!--             app:title="@string/app_name" -->
 
 <!--        <androidx.recyclerview.widget.RecyclerView-->
 <!--            android:id="@+id/quick_links_recycler_view"-->

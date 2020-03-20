@@ -6,7 +6,9 @@ import org.json.JSONObject
 
 data class GetPostUserView(
     val _token : String="",
-    val _array : JSONArray
+    val _array : JSONArray = JSONArray()
+    //val id:String =""
+    //val _array : JSONArray
     /*val id:String ="",
     val comments :String = "",
     val title :String = "",

@@ -80,8 +80,8 @@
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:maxWidth="300dp"
-            android:maxHeight="300dp"
-            app:srcCompat="@drawable/profile_pix" />
+            android:maxHeight="300dp"/>
+            <!--app:srcCompat="@drawable/profile_pix"/>-->
         </LinearLayout>
 
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.example.lovertips.home
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.lovertips.home.broadcast.BroadcastFragment
 import com.example.lovertips.home.feed.ui.FeedFragment
 import com.example.lovertips.messages.MessagesFragment
 
@@ -14,7 +15,7 @@ class HomePagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_
                 FeedFragment()
             }
             else -> {
-                return MessagesFragment()
+                return BroadcastFragment()
             }
         }
     }

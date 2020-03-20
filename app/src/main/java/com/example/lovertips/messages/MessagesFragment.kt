@@ -38,14 +38,13 @@ class MessagesFragment : Fragment() {
         val messagestoolbar: Toolbar = root.findViewById(R.id.toolbar_messages)
         (activity as AppCompatActivity).setSupportActionBar(messagestoolbar)
 
-        val textView = getString(R.string.title_messages)
-        val mspan = SpannableString(textView);
+        /*val mspan = SpannableString(textView);
 
         val mBlack = ForegroundColorSpan(Color.BLACK)
         val mRed = ForegroundColorSpan(Color.RED)
 
         mspan.setSpan(mRed, 1,4, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        (activity as AppCompatActivity).supportActionBar?.title = mspan
+        (activity as AppCompatActivity).supportActionBar?.title = mspan*/
 
 
         val recyclerView: RecyclerView = root.findViewById(R.id.messages_recycler_view)

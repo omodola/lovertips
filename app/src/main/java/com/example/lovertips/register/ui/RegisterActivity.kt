@@ -84,8 +84,8 @@ class RegisterActivity : AppCompatActivity() {
         val confirmPassword = findViewById<EditText>(R.id.confirm_password)
         val phoneNumber = findViewById<EditText>(R.id.phone_number)
         val checkBox = findViewById<CheckBox>(R.id.checkbox)
-        val signin =findViewById<Button>(R.id.signin)
-        val signup = findViewById<ImageButton>(R.id.signup)
+        val signin =findViewById<TextView>(R.id.signin)
+        val signup = findViewById<Button>(R.id.signup)
 
         val loading = findViewById<ProgressBar>(R.id.loading)
 
