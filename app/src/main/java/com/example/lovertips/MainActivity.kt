@@ -1,5 +1,6 @@
 package com.example.lovertips
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
@@ -12,8 +13,12 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.lovertips.login.PreferenceHelper
+import com.example.lovertips.login.ui.LoginActivity
 
 class MainActivity : AppCompatActivity() {
+
+    private var preferenceHelper: PreferenceHelper? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +33,20 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(setOf(
             R.id.navigation_home, R.id.navigation_messages, R.id.navigation_notifications))
         //setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        preferenceHelper = PreferenceHelper(this)
+
+        if (preferenceHelper!!.getIsLogin()) {
+            navView.setupWithNavController(navController)
+
+            /*val intent = Intent(this@MainActivity, WelcomeActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            this.finish()*/
+        }else{
+            val intent = Intent(this@MainActivity, LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            this.finish()
+        }
     }
 }

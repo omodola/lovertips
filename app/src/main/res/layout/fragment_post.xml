@@ -120,7 +120,7 @@
             android:text="Camera" />
 
         <ImageButton
-            android:id="@+id/lpost_camera"
+            android:id="@+id/post_camera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"

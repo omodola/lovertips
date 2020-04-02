@@ -29,7 +29,7 @@ class RegisterViewModel(private val registerRepository: RegisterRepository) : Vi
         // can be launched in a separate asynchronous job
         //val result = loginRepository.login(username)
         try {
-            Fuel.post("https://192.168.43.84/lovertips/api/users/")
+            Fuel.post("https://192.168.1.86/lovertips/api/users/")
 
                 //Fuel.post("http://10.10.10.115/lovertips/api/users/")
                 .body(userJson)

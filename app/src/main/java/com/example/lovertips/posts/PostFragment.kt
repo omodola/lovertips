@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
@@ -38,6 +39,7 @@ class PostFragment : Fragment() {
 
         val title:EditText = root.findViewById(R.id.create_post_title)
         val body:TextInputEditText = root.findViewById(R.id.post_text_input)
+        //val photo:ImageButton = root.findViewById(R.id.post_image)
 
         preferenceHelper = PreferenceHelper(requireContext())
 
@@ -61,7 +63,7 @@ class PostFragment : Fragment() {
 
             Toast.makeText(
                 requireContext(),
-                "$title +created succesfully",
+                "$title +created successfully",
                 Toast.LENGTH_LONG
             ).show()
 

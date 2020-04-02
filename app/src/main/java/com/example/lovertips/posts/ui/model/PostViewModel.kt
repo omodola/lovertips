@@ -25,10 +25,7 @@ class PostViewModel ():ViewModel(){
     fun createPost(userJson:String, userToken:String) {
         //val result = postRepository.post(input)
         try {
-            //Fuel.post("http://192.168.10.40/lovertips/api/posts/")
-            Fuel.post("http://192.168.10.40/lovertips/api/posts/")
-            //Fuel.post("http://192.168.43.84/lovertips/api/posts/")
-
+            Fuel.post("http://192.168.1.86/lovertips/api/posts/")
                 .header("token", userToken)
                 .body(userJson)
                 .responseJson()
@@ -74,8 +71,7 @@ class PostViewModel ():ViewModel(){
 
         try {
 
-            Fuel.get("http://192.168.10.40/lovertips/api/posts/")
-
+            Fuel.get("http://192.168.1.86/lovertips/api/posts/")
                 .header("Content-Type", "application/json")
                 .header("token", token)
                 .responseJson()

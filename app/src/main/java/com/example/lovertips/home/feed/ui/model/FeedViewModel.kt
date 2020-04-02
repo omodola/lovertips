@@ -19,7 +19,7 @@ class FeedViewModel(): ViewModel(){
 
     fun getAllPosts(userToken:String){
         try {
-            Fuel.get("http://192.168.43.84/lovertips/api/posts/")
+            Fuel.get("http://192.168.1.86/lovertips/api/posts/")
                 .responseJson()
                 {
                     request,response, result ->

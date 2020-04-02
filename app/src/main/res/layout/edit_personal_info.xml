@@ -155,4 +155,15 @@
         android:hint="@string/phone_number"
         android:text="+358417493289"
         android:inputType="phone"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/profile_pix"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/colorWhite"/>
+
 </LinearLayout>
