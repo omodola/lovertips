@@ -144,7 +144,7 @@ class ProfileInformationActivity : AppCompatActivity() {
                 cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
 
                 startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE)
-                startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE)
+
             } else if (listItems[i].equals("Choose from gallery")) {
                 val intent = Intent(Intent.ACTION_PICK)
                 intent.type = "image/*"
@@ -199,13 +199,13 @@ class ProfileInformationActivity : AppCompatActivity() {
         }
     }
 
-    //handle image pict result
+    //handle image pick result
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        /*if(resultCode == Activity.RESULT_OK){
+        if(resultCode == Activity.RESULT_OK){
             //set image captued to image view
             profile_image.setImageURI(imageUri)
-        }*/
+        }
 
         if(resultCode == Activity.RESULT_OK && requestCode == IMAGE_CAPTURE_CODE){
             //set image captued to image view

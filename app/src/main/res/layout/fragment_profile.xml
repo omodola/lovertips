@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/tt"
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/tt"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff">
@@ -65,6 +69,96 @@
 
       </RelativeLayout>
 
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="140dp"
+          android:background="@drawable/profile_gradient_background">
+
+         <androidx.cardview.widget.CardView
+             android:layout_width="390dp"
+             android:layout_height="match_parent"
+             android:layout_centerHorizontal="true"
+             android:fontFamily="@font/montserrat_alternates">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+               <LinearLayout
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="1"
+                   android:gravity="center"
+                   android:orientation="vertical">
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="City"
+                      android:textColor="@color/colorBlack"
+                      android:textSize="20sp" />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:paddingTop="10dp"
+                      android:text="Lagos"
+                      android:textSize="15sp" />
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="1"
+                   android:gravity="center"
+                   android:orientation="vertical">
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Posts"
+                      android:textColor="@color/colorBlack"
+                      android:textSize="20sp" />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:paddingTop="10dp"
+                      android:text="1205"
+                      android:textSize="15sp" />
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="1"
+                   android:gravity="center"
+                   android:orientation="vertical">
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Status"
+                      android:textColor="@color/colorBlack"
+                      android:textSize="20sp" />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:paddingTop="10dp"
+                      android:text="Single"
+                      android:textSize="15sp" />
+
+               </LinearLayout>
+
+            </LinearLayout>
+
+         </androidx.cardview.widget.CardView>
+      </RelativeLayout>
 
       <LinearLayout
           android:layout_width="wrap_content"
@@ -98,3 +192,4 @@
    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

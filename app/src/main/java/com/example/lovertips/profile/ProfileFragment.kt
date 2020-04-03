@@ -75,10 +75,7 @@ class ProfileFragment : Fragment(), ProfileAdapter.OnClickProfile {
             {
 
                 if (ActivityCompat.checkSelfPermission(context!!, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED
-                    || ActivityCompat.checkSelfPermission(
-                        context!!,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE
-                    ) == PackageManager.PERMISSION_DENIED
+                    || ActivityCompat.checkSelfPermission(context!!, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED
                 ) {
                     requestPermissions(
                         activity!!, arrayOf(
@@ -137,9 +134,8 @@ class ProfileFragment : Fragment(), ProfileAdapter.OnClickProfile {
 
                 val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
                 cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
+                startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE)
 
-                startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE)
-                startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE)
             } else if (listItems[i].equals("Choose from gallery")) {
                 val intent = Intent(Intent.ACTION_PICK)
                 intent.type = "image/*"
@@ -160,18 +156,6 @@ class ProfileFragment : Fragment(), ProfileAdapter.OnClickProfile {
             dialog.cancel()
         }
 
-
-
-
-        /* val values = ContentValues()
-         values.put(MediaStore.Images.Media.TITLE, "New Picture")
-         values.put(MediaStore.Images.Media.DESCRIPTION, "From the Camera")
-         imageUri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
-
-         val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-         cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
-
-         startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE)*/
     }
 
 
@@ -198,12 +182,12 @@ class ProfileFragment : Fragment(), ProfileAdapter.OnClickProfile {
     //handle image pict result
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(resultCode == Activity.RESULT_OK){
+        if(resultCode == Activity.RESULT_OK && data == null){
             //set image captued to image view
             profile_image.setImageURI(imageUri)
         }
 
-        if(resultCode == Activity.RESULT_OK && requestCode == IMAGE_CAPTURE_CODE){
+        if(resultCode == Activity.RESULT_OK && requestCode == IMAGE_CAPTURE_CODE && data != null){
             //set image captued to image view
             profile_image.setImageURI(data?.data)
         }

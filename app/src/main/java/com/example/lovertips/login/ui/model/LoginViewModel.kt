@@ -45,7 +45,7 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
         //val result = loginRepository.login(username)
         try {
 
-            Fuel.post("http://192.168.1.86/lovertips/api/login/")
+            Fuel.post("http://192.168.56.1/lovertips/api/login/")
             .body(userJson)
             .responseJson()
             {

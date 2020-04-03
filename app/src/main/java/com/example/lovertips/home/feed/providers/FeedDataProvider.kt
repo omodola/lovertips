@@ -71,6 +71,7 @@ class FeedDataProvider{
             //progress!!.show
 
             val token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb3ZlcnRpcHMuY29tIiwiYXVkIjoiaHR0cDpcL1wvbG92ZXJ0aXBzLmNvbSIsImV4cCI6MTU3NzY1MzU1OSwidXNlciI6eyJpZCI6ImY0NWI4NTU1LTI1ZTctNDdjYS1iYWNkLWE3ODJiZGZlMjEyMyIsInRva2VuIjoieVRCS2I5cThFbiJ9fQ.hh6DLNkJ0aamTZCbNO_jqAaAb0UXK5b5Kt8NNSkVlQQ"
+            //Fuel.get("http://192.168.56.1/lovertips/api/posts/")
             Fuel.get("http://192.168.1.86/lovertips/api/posts/")
 
                 .header("Content-Type", "application/json")
